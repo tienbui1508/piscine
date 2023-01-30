@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/30 20:17:12 by dbui              #+#    #+#             */
+/*   Updated: 2023/01/30 20:17:26 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 void	swap(int *a, int *b)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *a;
 	*a = *b;
@@ -10,16 +21,19 @@ void	swap(int *a, int *b)
 
 void	ft_sort_int_tab(int *tab, int size)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
-	for (i = 0; i < size - 1; i++)
+	while (i < size - 1)
 	{
-		for (j = i + 1; j < size; j++)
+		j = i + 1;
+		while (j < size)
 		{
 			if (tab[i] > tab[j])
-				swap(tab[i], tab[j]);
+				swap(&tab[i], &tab[j]);
+			j++;
 		}
+		i++;
 	}
 }
