@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 19:11:37 by dbui              #+#    #+#             */
-/*   Updated: 2023/01/29 19:11:40 by dbui             ###   ########.fr       */
+/*   Created: 2023/01/31 22:41:54 by dbui              #+#    #+#             */
+/*   Updated: 2023/01/31 22:41:55 by dbui             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+char    *ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	div;
-	int	mod;
+    unsigned int i;
 
-	if (*b != 0)
-	{
-		div = *a / *b;
-		mod = *a % *b;
-		*a = div;
-		*b = mod;
-	}
+    i = 0;
+    while (i < n && src[i] != '\0')
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    while (i < n)
+    {
+        dest[i] = '\0';
+        i++;
+    }
+    return (dest);
 }
