@@ -5,10 +5,10 @@
 // void	ft_swap(int *a, int *b); //ex02
 // void	ft_div_mod(int a, int b, int *div, int *mod); //ex03
 // void	ft_ultimate_div_mod(int *a, int *b); //ex04
-// void	ft_putstr(char *str); //ex05
+void	ft_putstr(char *str); //ex05
 // int	ft_strlen(char *str); //ex06
 // void	 ft_rev_int_tab(int *tab, int size); //ex07
-void	ft_sort_int_tab(int *tab, int size); //ex08
+// void	ft_sort_int_tab(int *tab, int size); //ex08
 
 int main(void)
 {
@@ -92,14 +92,14 @@ int main(void)
     // ft_ultimate_div_mod(a, b);
     // printf("Expected output:\nnum1 = 4, num2 = 2\nOutput:\nnum1 = %i, num2 = %i", num1, num2);
 
-    // //test ex05 ft_putstr(char *str)
-    // printf("Testing ex05 ft_putstr(char *str)\n");
-    // char *str;
+    //test ex05 ft_putstr(char *str)
+    printf("Testing ex05 ft_putstr(char *str)\n");
+    char *str;
     
-    // str = "Hello world!";
-    // printf("Expected output:\n%s\n", str);
-    // printf("Output:\n");
-    // ft_putstr(str);
+    str = "Hello world!";
+    printf("Expected output:\n%s\n", str);
+    printf("Output:\n");
+    ft_putstr(str);
 
     // //test ex06 int	ft_strlen(char *str)
     // printf("Testing ex06 int	ft_strlen(char *str)\n");
@@ -121,19 +121,19 @@ int main(void)
     // for (int i = 0; i < 8; i++)
     //     printf("%i", numbers[i]);
 
-    //test ex08 void	ft_sort_int_tab(int *tab, int size)
-    printf("Testing ex08 void	ft_sort_int_tab(int *tab, int size)\n");
+    // //test ex08 void	ft_sort_int_tab(int *tab, int size)
+    // printf("Testing ex08 void	ft_sort_int_tab(int *tab, int size)\n");
    
-    int numbers[]  = {1, 3, 2, 4, 8, 5, 7, 6};
-    int *tab = &numbers[0];
-    printf("Original:\n");
-    for(int i = 0; i < 8; i++)
-        printf("%i", tab[i]);
-    printf("\nExpected output:\n12345678");
-    ft_sort_int_tab(tab, 8);
-    printf("\nOutput:\n");
-    for(int i = 0; i < 8; i++)
-        printf("%i", tab[i]);
+    // int numbers[]  = {1, 3, 2, 4, 8, 5, 7, 6};
+    // int *tab = &numbers[0];
+    // printf("Original:\n");
+    // for(int i = 0; i < 8; i++)
+    //     printf("%i", tab[i]);
+    // printf("\nExpected output:\n12345678");
+    // ft_sort_int_tab(tab, 8);
+    // printf("\nOutput:\n");
+    // for(int i = 0; i < 8; i++)
+    //     printf("%i", tab[i]);
 
     return 0;
 }

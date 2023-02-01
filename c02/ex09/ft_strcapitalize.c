@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/01 22:24:11 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/01 22:24:12 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdbool.h>
 
 //check if a character is alphanumeric
@@ -45,11 +57,11 @@ char *ft_strcapitalize(char *str)
 	return (str);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main(void)
 {
     char str[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
 	printf("%s", ft_strcapitalize(str));
 
 	return (0);
-}
+} */
