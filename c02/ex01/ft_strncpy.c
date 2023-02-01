@@ -27,3 +27,24 @@ char    *ft_strncpy(char *dest, char *src, unsigned int n)
     }
     return (dest);
 }
+
+/* //test ex01 char    *ft_strncpy(char *dest, char *src, unsigned int n);
+#include <stdio.h>
+#include <string.h>
+int main(void)
+{
+    char dest[] = "destination should be longer";
+    char src[] = "the source";
+
+    printf("Test 1 Expected output:\n");
+    printf("%s\n", strncpy(dest, src, 7));
+    printf("Test 1 Output:\n");
+    printf("%s\n", ft_strncpy(dest, src, 7));
+
+    printf("Test 2 Expected output:\n");
+    printf("%s\n", strncpy(dest, src, 20));
+    printf("Test 2 Output:\n");
+    printf("%s\n", ft_strncpy(dest, src, 20));
+
+	return (0);
+} */
