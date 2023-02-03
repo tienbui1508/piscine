@@ -40,10 +40,11 @@ char	lowercase(char c)
 	return (c);
 }
 
-//capitalize the first letter of each word and transform all other letters to lowercase
-char *ft_strcapitalize(char *str)
+/* capitalize the first letter of each word
+and transform all other letters to lowercase */
+char	*ft_strcapitalize(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')

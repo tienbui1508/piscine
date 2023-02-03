@@ -6,34 +6,34 @@
 /*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 22:42:05 by dbui              #+#    #+#             */
-/*   Updated: 2023/01/31 22:42:07 by dbui             ###   ########.fr       */
+/*   Updated: 2023/02/03 22:04:21 by dbui             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
 //check if a character is an alphabetical character
-bool    is_alpha(char c)
+bool	is_alpha(char c)
 {
-    if (c >= 'a' && c <= 'z')
-        return (1);
-    else if (c >= 'A' && c <= 'Z')
-        return (1);
-    else
-        return (0);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
 }
 
-int    ft_str_is_alpha(char *str)
+int	ft_str_is_alpha(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        if (!is_alpha(str[i]))
-            return (0);
-        i++;
-    }
-    return (1);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!is_alpha(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 /* //test ex02 int    ft_str_is_alpha(char *str)

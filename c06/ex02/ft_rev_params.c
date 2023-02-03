@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 22:23:59 by dbui              #+#    #+#             */
-/*   Updated: 2023/02/01 22:24:01 by dbui             ###   ########.fr       */
+/*   Created: 2023/02/03 22:29:54 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/03 22:30:00 by dbui             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+#include <unistd.h>
+
+void	print_char(char c)
+{
+	write(1, &c, 1);
+}
+
+void	print_str(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i]) >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
+		print_char(str[i]);
 		i++;
 	}
-	return (str);
+	print_char('\n');
 }
 
-/* //test ex08 int	*ft_strlowcase(char *str)
-#include <stdio.h>
-int main(void)
+int	main(int argc, char *argv[])
 {
-    char str[] = "lOwerCaSe 123 !@#";
-	printf("%s", ft_strlowcase(str)); //lowercase 123 !@#%
-
+	while (0 < argc)
+	{
+		print_str(argv[argc - 1]);
+		argc--;
+	}
 	return (0);
-} */
+}
