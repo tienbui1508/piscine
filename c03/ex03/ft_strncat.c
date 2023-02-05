@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/04 14:55:33 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/04 14:55:34 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	len_strncat(char *str)
 {
 	int	i;
@@ -24,7 +36,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	return (dest);
 }
 
-//test ex03
+/* //test ex03
 #include <stdio.h>
 #include <string.h>
 int	main(void)
@@ -39,4 +51,4 @@ int	main(void)
 	printf("%s\n", ft_strncat(dest2_03, src2_03, 5));
 
 	return 0;
-}
+} */

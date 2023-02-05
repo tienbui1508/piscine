@@ -1,45 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 14:55:22 by dbui              #+#    #+#             */
-/*   Updated: 2023/02/04 14:55:23 by dbui             ###   ########.fr       */
+/*   Created: 2023/02/05 18:50:53 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/05 18:50:54 by dbui             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
+	while (str[i] != '\0')
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
+		write(1, &str[i], 1);
+		i++;
 	}
-	return (0);
 }
 
 /* //test ex01
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
+
 int	main(void)
 {
-	char str1_01[] = "String a";
-	char str2_01[] = "String z";
+	char str1_01[] = "This is string 1";
+	char str2_01[] = "one two three";
+	printf("-----------Testing ex01-----------\n");
 	printf("Expected:\n");
-	printf("-1\n0\n1\n");
+	printf("%s\n", str1_01);
+	printf("%s\n", str2_01);
 	printf("Output:\n");
-	printf("%i\n", ft_strncmp(str1_01, str2_01, 8));
-	printf("%i\n", ft_strncmp(str1_01, str2_01, 6));
-	printf("%i\n", ft_strncmp(str2_01, str1_01, 8));
-
-	return 0;
+	ft_putstr(str1_01);
+	printf("\n");
+	ft_putstr(str2_01);
+	return (0);
 } */
