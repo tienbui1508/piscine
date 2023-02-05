@@ -1,0 +1,22 @@
+int	ft_sqrt(int nb)
+{
+	int	sqrt;
+
+	sqrt = 0;
+	if (nb < 0)
+		return (0);
+	while (sqrt * sqrt < nb)
+		sqrt++;
+	if (sqrt * sqrt > nb)
+		sqrt = 0;
+	return (sqrt);
+}
+
+//test ex05
+#include <stdio.h>
+int	main(void)
+{
+	printf("------------Testing ex05------------\n");
+	printf("Expected:\n0|1|3|10|42|0|0\n");
+	printf("Output:\n%i|%i|%i|%i|%i|%i|%i\n", ft_sqrt(0), ft_sqrt(1), ft_sqrt(9), ft_sqrt(100), ft_sqrt(1764), ft_sqrt(24), ft_sqrt(42));
+}
