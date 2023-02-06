@@ -35,14 +35,21 @@ int	ft_find_next_prime(int nb)
 {
 	while (!ft07_is_prime(nb))
 		nb++;
-	return nb;
+	return (nb);
 }
 
-//test ex07
+/* //test ex07
 #include <stdio.h>
 int	main(void)
 {
 	printf("------------Testing ex07------------\n");
 	printf("Expected:\n2|2|5|13|43|89|149\n");
-	printf("Output:\n%i|%i|%i|%i|%i|%i|%i\n", ft_find_next_prime(-42), ft_find_next_prime(0), ft_find_next_prime(5), ft_find_next_prime(13), ft_find_next_prime(42), ft_find_next_prime(89), ft_find_next_prime(142));
-}
+	printf("Output:\n%i|%i|%i|%i|%i|%i|%i\n",
+	ft_find_next_prime(-42),
+	ft_find_next_prime(0),
+	ft_find_next_prime(5),
+	ft_find_next_prime(13),
+	ft_find_next_prime(42),
+	ft_find_next_prime(89),
+	ft_find_next_prime(142));
+} */
