@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 13:47:05 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/07 13:47:07 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 char	*ft_strdup(char *src)
@@ -25,7 +37,7 @@ char	*ft_strdup(char *src)
 	return (str);
 }
 
-//test ex00
+/* //test ex00
 #include <stdio.h>
 #include <string.h>
 int main(void)
@@ -40,4 +52,4 @@ int main(void)
 	printf("Expected:\n|%s|\n", expected);
 	printf("Output:\n|%s|\n", output);
 	return 0;
-}
+} */
