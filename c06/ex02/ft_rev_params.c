@@ -32,7 +32,7 @@ void	print_str(char *str)
 
 int	main(int argc, char *argv[])
 {
-	while (0 < argc)
+	while (1 < argc)
 	{
 		print_str(argv[argc - 1]);
 		argc--;
