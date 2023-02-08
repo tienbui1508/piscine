@@ -17,17 +17,17 @@ int	ft07_is_prime(int nb)
 	i = 2;
 	if (nb < 2)
 		return (0);
-	else if (nb == 2)
+	else if (nb == 2 || nb == 3)
 		return (1);
 	else
 	{
-		while (nb % i != 0)
+		while (i * i <= nb)
 		{
-			if (i * i > nb)
-				return (1);
+			if (nb % i == 0)
+				return (0);
 			i++;
 		}
-		return (0);
+		return (1);
 	}
 }
 
