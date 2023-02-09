@@ -1,35 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/25 21:14:15 by dbui              #+#    #+#             */
+/*   Updated: 2023/01/28 21:40:08 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_print_comb(void){
-    char    array[5];
-
-    array[0] = '0';
-    array[3] = ',';
-    array[4] = ' ';
-    while (array[0] <= '7')
-    {
-        array[1] = array[0] + 1;
-        while (array[1] <= '8')
-        {
-            array[2] = array[1] + 1;
-            while (array[2] <= '9')
-            {
-                if (!(array[0] == '7' && array[1] == '8' && array[2] == '9'))
-                    write(1, array, 5);
-                else
-                    write(1, array, 3);
-                array[2]++;
-            }
-        array[1]++;
-        }
-    array[0]++;
-    }
-}
-
-int main(void)
+void	ft_print_comb(void)
 {
-	ft_print_comb();
-    return 0;
-}
+	char	num1;
+	char	num2;
+	char	num3;
 
+	num1 = '0';
+	while (num1 <= '9')
+	{
+		num2 = num1 + 1;
+		while (num2 <= '9')
+		{
+			num3 = num2 + 1;
+			while (num3 <= '9')
+			{		
+				write(1, &num1, 1);
+				write(1, &num2, 1);
+				write(1, &num3, 1);
+				if (!(num1 == '7' && num2 == '8' && num3 == '9'))
+					write(1, ", ", 2);
+				num3++;
+			}
+			num2++;
+		}
+		num1++;
+	}
+}

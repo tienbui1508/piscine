@@ -21,7 +21,7 @@ int	ft07_is_prime(int nb)
 		return (1);
 	else
 	{
-		while (i * i <= nb)
+		while (i <= nb / i)
 		{
 			if (nb % i == 0)
 				return (0);
@@ -43,13 +43,20 @@ int	ft_find_next_prime(int nb)
 int	main(void)
 {
 	printf("------------Testing ex07------------\n");
-	printf("Expected:\n2|2|5|13|43|89|149\n");
-	printf("Output:\n%i|%i|%i|%i|%i|%i|%i\n",
-	ft_find_next_prime(-42),
-	ft_find_next_prime(0),
-	ft_find_next_prime(5),
-	ft_find_next_prime(13),
-	ft_find_next_prime(42),
-	ft_find_next_prime(89),
-	ft_find_next_prime(142));
-} */
+	printf("%d -> %d\n", -1665, ft_find_next_prime(-1665));
+	printf("%d -> %d\n", 0, ft_find_next_prime(0));
+	printf("%d -> %d\n", 1, ft_find_next_prime(1));
+	printf("%d -> %d\n", 2, ft_find_next_prime(2));
+	printf("%d -> %d\n", 7853, ft_find_next_prime(7853));
+	printf("%d -> %d\n", 78989, ft_find_next_prime(78989));
+	printf("%d -> %d\n", 2147483643, ft_find_next_prime(2147483643));
+	printf("%d -> %d\n", 2147483645, ft_find_next_prime(2147483645));
+	printf("%d -> %d\n", 2147483646, ft_find_next_prime(2147483646));
+	printf("%d -> %d\n", 2147483647, ft_find_next_prime(2147483647));
+	printf("%d -> %d\n", 343041, ft_find_next_prime(343041));
+	printf("%d -> %d\n", 278358, ft_find_next_prime(278358));
+	printf("%d -> %d\n", 367625, ft_find_next_prime(367625));
+	printf("%d -> %d\n", 244763, ft_find_next_prime(244763));
+	printf("%d -> %d\n", 262173, ft_find_next_prime(262173));
+}
+ */

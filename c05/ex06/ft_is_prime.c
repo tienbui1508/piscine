@@ -21,7 +21,7 @@ int	ft_is_prime(int nb)
 		return (1);
 	else
 	{
-		while (i * i <= nb)
+		while (i <= nb / i)
 		{
 			if (nb % i == 0)
 				return (0);
@@ -36,13 +36,12 @@ int	ft_is_prime(int nb)
 int	main(void)
 {
 	printf("------------Testing ex06------------\n");
-	printf("Expected:\n0|0|0|0|1|1|1\n");
-	printf("Output:\n%i|%i|%i|%i|%i|%i|%i\n",
-	ft_is_prime(-42),
-	ft_is_prime(0),
-	ft_is_prime(1),
-	ft_is_prime(42),
-	ft_is_prime(2),
-	ft_is_prime(89),
-	ft_is_prime(4219));
+	printf("%d -> %d\n", 4219, ft_is_prime(4219));
+	printf("%d -> %d\n", 7853, ft_is_prime(7853));
+	printf("%d -> %d\n", 78989, ft_is_prime(78989));
+	printf("%d -> %d\n", -2147483647, ft_is_prime(-2147483647));
+	printf("%d -> %d\n", +2147483647, ft_is_prime(+2147483647));
+	printf("%d -> %d\n", 200, ft_is_prime(200));
+	printf("%d -> %d\n", 201, ft_is_prime(201));
+	printf("%d -> %d\n", 202, ft_is_prime(202));
 } */

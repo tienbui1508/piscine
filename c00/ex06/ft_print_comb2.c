@@ -1,41 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/26 17:03:34 by dbui              #+#    #+#             */
+/*   Updated: 2023/01/26 17:08:40 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_print_num(int num){
-    char    c1;
-    char    c2;
+void	ft_print_num(int num)
+{	
+	char	c1;
+	char	c2;
 
-    c1 = num / 10 + 48;
-    c2 = num % 10 + 48;
-    write(1, &c1, 1);
-    write(1, &c2, 1);
+	c1 = num / 10 + 48;
+	c2 = num % 10 + 48;
+	write(1, &c1, 1);
+	write(1, &c2, 1);
 }
 
-void    ft_print_comb2(void)
+void	ft_print_comb2(void)
 {
-    int num1;
-    int num2;
+	int	num1;
+	int	num2;
 
-    num1 = 0;
-    while (num1 < 99)
-    {
-        num2 = num1 + 1;
-        while (num2 < 100)
-        {
-            ft_print_num(num1);
-            write(1, " ", 1);
-            ft_print_num(num2);
-            if (!(num1 == 98 && num2 == 99))
-                write(1, ", ", 2);
-            num2++;
-        }
-        num1++;
-    }
+	num1 = 0;
+	while (num1 < 99)
+	{
+		num2 = num1 + 1;
+		while (num2 < 100)
+		{
+			ft_print_num(num1);
+			write(1, " ", 1);
+			ft_print_num(num2);
+			if (!(num1 == 98 && num2 == 99))
+				write(1, ", ", 2);
+			num2++;
+		}
+		num1++;
+	}
 }
 
-int main(void)
+/* int main(void)
 {
 	ft_print_comb2();
     return 0;
-}
-
+} */

@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:51:05 by dbui              #+#    #+#             */
-/*   Updated: 2023/01/25 19:43:07 by dbui             ###   ########.fr       */
+/*   Created: 2023/02/09 15:55:15 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/09 15:55:16 by dbui             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-void	ft_print_alphabet(void)
-{
-	char	character;
+# include <unistd.h>
 
-	character = 'a';
-	while (character <= 'z')
-	{
-		write(1, &character, 1);
-		character++;
-	}
-}
+typedef int	t_bool;
+# define EVEN(nbr) (nbr % 2 == 0)
+# define TRUE 1
+# define FALSE 0
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define SUCCESS 0
 
-/*int	main(void)
-{
-	ft_print_alphabet();
-	return (0);
-}*/
+#endif

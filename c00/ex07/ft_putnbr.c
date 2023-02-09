@@ -1,35 +1,39 @@
-#include <unistd.h>
-#include <limits.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/26 16:17:10 by dbui              #+#    #+#             */
+/*   Updated: 2023/01/28 21:41:47 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_putchar(char c)
+#include<unistd.h>
+
+void	putchar(char c)
 {
 	write(1, &c, 1);
 }
 
 void	ft_putnbr(int nb)
 {
-	if (nb ==INT_MIN)
-	{
+	if (nb == -2147483648)
 		write(1, "-2147483648", 11);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	else if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10 + '0');
-	}
 	else
-		ft_putchar(nb % 10 + '0');
-}
-
-int main ()
-{
-ft_putnbr(INT_MIN);
-write(1, "\n", 2);
-ft_putnbr(INT_MAX);
-
+	{
+		if (nb < 0)
+		{
+			putchar('-');
+			nb = -nb;
+		}
+		if (nb < 10)
+			putchar(nb % 10 + '0');
+		else
+		{
+			ft_putnbr(nb / 10);
+			putchar(nb % 10 + '0');
+		}
+	}
 }

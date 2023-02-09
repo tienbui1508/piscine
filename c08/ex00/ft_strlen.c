@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:51:05 by dbui              #+#    #+#             */
-/*   Updated: 2023/01/25 19:43:07 by dbui             ###   ########.fr       */
+/*   Created: 2023/01/29 19:29:47 by dbui              #+#    #+#             */
+/*   Updated: 2023/01/29 19:29:48 by dbui             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft.h"
 
-void	ft_print_alphabet(void)
+int	ft_strlen(char *str)
 {
-	char	character;
+	int	i;
 
-	character = 'a';
-	while (character <= 'z')
-	{
-		write(1, &character, 1);
-		character++;
-	}
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
-
-/*int	main(void)
-{
-	ft_print_alphabet();
-	return (0);
-}*/
