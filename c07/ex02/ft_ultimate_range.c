@@ -19,14 +19,14 @@ int	ft_ultimate_range(int **range, int min, int max)
 	int	*nums;
 
 	len = max - min;
-	nums = (int *)(malloc(len * sizeof(int)));
-	if (!nums)
-		return (-1);
 	if (len <= 0)
 	{
 		*range = NULL;
 		return (0);
 	}
+	nums = (int *)(malloc(len * sizeof(int)));
+	if (!nums)
+		return (-1);
 	i = 0;
 	while (i < len)
 	{
@@ -54,5 +54,13 @@ int main(void)
 		printf("%i ", nums[i]);
 		i++;
 	}
+
+	printf("--------------Testing ex02: return 0 when min >= max--------------\n");
+	int min2 = 42;
+	int max2 = 2;
+	int *nums2;
+	int size2 = ft_ultimate_range(&nums, min2, max2);
+	printf("Expected:\n0\n");
+	printf("Output:\n%i", size2);
 	return 0;
 } */

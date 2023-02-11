@@ -70,7 +70,10 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	i = 0;
 	j = 0;
 	if (size == 0)
-		return ((char *)malloc(sizeof(char)));
+	{
+		result = ((char *)malloc(sizeof(char)));
+		return (result);
+	}
 	len = get_len(size, strs, sep);
 	result = (char *)(malloc(len * sizeof(char) + 1));
 	if (!result)
@@ -96,7 +99,7 @@ int	main(void)
 	char	*result;
 	int	size;
 
-	size = 3;
+	size = 0;
 	strs[0] = "This is string 1";
 	strs[1] = "  String 2 here  ";
 	strs[2] = "This is string 3";
@@ -105,5 +108,4 @@ int	main(void)
 	printf("%s$\n", result);
 	free(result);
 	return 0;
-}
- */
+} */
