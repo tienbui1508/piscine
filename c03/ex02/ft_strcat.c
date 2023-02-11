@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 14:55:27 by dbui              #+#    #+#             */
-/*   Updated: 2023/02/04 14:55:28 by dbui             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 int	len_strcat(char *str)
 {
 	int	i;
@@ -36,7 +24,7 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-/* //test ex02
+//test ex02
 #include <stdio.h>
 #include <string.h>
 int	main(void)
@@ -51,4 +39,4 @@ int	main(void)
 	printf("%s\n", ft_strcat(dest2_02, src2_02));
 
 	return 0;
-} */
+}
