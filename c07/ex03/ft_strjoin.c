@@ -71,11 +71,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	j = 0;
 	if (size == 0)
 	{
-		result = ((char *)malloc(sizeof(char)));
+		result = (char *)malloc(sizeof(char));
 		return (result);
 	}
 	len = get_len(size, strs, sep);
-	result = (char *)(malloc(len * sizeof(char) + 1));
+	result = (char *)(malloc((len + 1) * sizeof(char)));
 	if (!result)
 		return (0);
 	while (i < size)
@@ -93,17 +93,16 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 #include <stdio.h>
 int	main(void)
 {
-	int		index;
-	char	**strs;
+
 	char	*separator;
 	char	*result;
-	int	size;
+	int	size = 3;
+	char	*strs[size];
 
-	size = 0;
 	strs[0] = "This is string 1";
 	strs[1] = "  String 2 here  ";
 	strs[2] = "This is string 3";
-	separator = "||";
+	separator = "~~";
 	result = ft_strjoin(size, strs, separator);
 	printf("%s$\n", result);
 	free(result);

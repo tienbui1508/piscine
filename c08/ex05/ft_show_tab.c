@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_show_tab.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/12 20:27:44 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/12 20:27:45 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include "ft_stock_str.h"
 
@@ -50,10 +62,10 @@ void	ft_show_tab(struct s_stock_str *par)
 	}
 }
 
-//test ex05
+/* //test ex05
 #include <stdio.h>
 #include "ft_strs_to_tab.c"
 int	main(int ac, char **av)
 {
 	ft_show_tab(ft_strs_to_tab(ac, av));
-}
+} */

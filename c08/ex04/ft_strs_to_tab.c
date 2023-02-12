@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/12 20:27:17 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/12 20:27:18 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_stock_str.h"
 #include <stdlib.h>
 
@@ -22,7 +34,7 @@ t_stock_str	*str_to_struct(char *src)
 
 	len = len_str(src);
 	stock = (t_stock_str *)malloc(sizeof(t_stock_str));
-	copy = (char *)malloc(len * sizeof(char) + 1);
+	copy = (char *)malloc((len + 1)* sizeof(char));
 	if (!copy || !stock)
 		return (0);
 	i = 0;
