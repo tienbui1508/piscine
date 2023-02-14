@@ -14,14 +14,14 @@
 
 int	ft_sqrt(int nb)
 {
-	double	sqrt;
+	int	sqrt;
 
 	sqrt = 0;
 	if (nb <= 0)
 		return (0);
 	else
 	{
-		while (sqrt * sqrt < nb)
+		while ( sqrt < nb/sqrt)
 			sqrt++;
 		if (sqrt * sqrt > nb)
 			sqrt = 0;
@@ -29,7 +29,7 @@ int	ft_sqrt(int nb)
 	}
 }
 
-/* //test ex05
+//test ex05
 #include <stdio.h>
 int	main(void)
 {
@@ -51,4 +51,4 @@ int	main(void)
         printf("sqrt of %d is %d\n", 941392614, ft_sqrt(941392614));
         printf("sqrt of %d is %d\n", 797328169, ft_sqrt(797328169));
         printf("sqrt of %d is %d\n", 1907291574, ft_sqrt(1907291574));
-} */
+}

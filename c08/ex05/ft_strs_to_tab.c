@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/12 20:27:17 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/12 20:27:18 by dbui             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_stock_str.h"
 #include <stdlib.h>
 
@@ -12,19 +24,16 @@ int	len_str(char *str)
 	return (len);
 }
 
-//transform a string into a structure allocated in memory
-t_stock_str	*str_to_struct(char *src)
+//transform a string into a structure
+t_stock_str	str_to_struct(char *src)
 {
 	int			i;
 	int			len;
 	char		*copy;
-	t_stock_str	*stock;
+	t_stock_str	stock;
 
 	len = len_str(src);
-	stock = (t_stock_str *)malloc(sizeof(t_stock_str));
-	copy = (char *)malloc(len * sizeof(char) + 1);
-	if (!copy || !stock)
-		return (0);
+	copy = (char *)malloc((len + 1) * sizeof(char));
 	i = 0;
 	while (src[i])
 	{
@@ -32,9 +41,9 @@ t_stock_str	*str_to_struct(char *src)
 		i++;
 	}
 	copy[i] = '\0';
-	stock->size = len;
-	stock->str = src;
-	stock->copy = copy;
+	stock.size = len;
+	stock.str = src;
+	stock.copy = copy;
 	return (stock);
 }
 
@@ -50,12 +59,11 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	i = 0;
 	while (i < ac)
 	{
-		array[i] = *str_to_struct(av[i]);
+		array[i] = str_to_struct(av[i]);
 		i++;
 	}
-	array[i].size = 0;
-	array[i].str = "";
-	array[i].copy = "";
+	array[i].str = 0;
+	array[i].copy = 0;
 	return (array);
 }
 
