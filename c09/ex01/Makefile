@@ -15,17 +15,13 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -I $(INCLUDES_DIR) -c $< -o $@
-	@echo "Compiling $<"
+.c.o: $(HEADERS)
+	$(CC) $(CFLAGS) -I $(INCLUDES_DIR) -c $< -o ${<:.c=.o}
 
 clean:
 	rm -f $(OBJS)
-	@echo "Removing temporary files"
 
 fclean: clean
 	rm -f $(NAME)
-	@echo "Removing binary"
 
 re: fclean all
-	@echo "Remaking all"

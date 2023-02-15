@@ -48,7 +48,7 @@ int main(void)
 
 	expected = strdup(str);
 	output = ft_strdup(str);
-	printf("--------------Testing ex00--------------");
+	printf("--------------Testing ex00--------------\n");
 	printf("Expected:\n|%s|\n", expected);
 	printf("Output:\n|%s|\n", output);
 	return 0;

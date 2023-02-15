@@ -55,7 +55,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	int	i;
 
 	i = 0;
-	while (par[i].size != 0)
+	while (par[i].str != 0)
 	{
 		ft_show_one(par[i]);
 		i++;
@@ -69,4 +69,3 @@ int	main(int ac, char **av)
 {
 	ft_show_tab(ft_strs_to_tab(ac, av));
 } */
-
