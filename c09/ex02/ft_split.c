@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 
+//check if a character belongs to charset
 int	char_is_charset(char c, char *charset)
 {
 	while (*charset)
@@ -23,6 +24,7 @@ int	char_is_charset(char c, char *charset)
 	return (0);
 }
 
+//count the number of words to be splitted
 int	count_words(char *str, char *charset)
 {
 	int	count;
@@ -30,14 +32,17 @@ int	count_words(char *str, char *charset)
 	count = 0;
 	while (*str)
 	{
-		if (!char_is_charset(*str, charset)
-			&& char_is_charset(*(str + 1), charset))
+		while (*str && char_is_charset(*str, charset))
+			str++;
+		if (*str)
 			count++;
-		str++;
+		while (*str && !char_is_charset(*str, charset))
+			str++;
 	}
 	return (count);
 }
 
+//get the length of a word
 int	word_len(char *str, char *charset)
 {
 	int	len;
@@ -51,6 +56,7 @@ int	word_len(char *str, char *charset)
 	return (len);
 }
 
+//create a word from the original string
 char	*ft_word(char *str, char *charset)
 {
 	int		i;
@@ -69,6 +75,7 @@ char	*ft_word(char *str, char *charset)
 	return (word);
 }
 
+//split the string and create an array of words
 char	**ft_split(char *str, char *charset)
 {
 	char	**strs;
@@ -87,32 +94,56 @@ char	**ft_split(char *str, char *charset)
 			strs[i] = ft_word(str, charset);
 			i++;
 		}
-		str += word_len(str, charset);
+		while (*str && !char_is_charset(*str, charset))
+			str++;
 	}
 	strs[i] = 0;
 	return (strs);
 }
 
-/* #include <stdio.h>
+/* //test ex02
+#include <stdio.h>
 #include <stdlib.h>
-
-char **ft_split(char *str, char *charset);
 
 int main(void)
 {
     char *str = "This is a string to be split";
     char *charset = " ";
     char **result = ft_split(str, charset);
-
     int i = 0;
-    while (result[i])
+
+	printf("\n-----Test 1----\n");
+    while (result[i] != NULL)
     {
         printf("|%s|\n", result[i]);
-        free(result[i]);
         i++;
     }
+    free(result);
 
+	printf("\n-----Test 2----\n");
+	str = "cCu2ggnOiODP3Zlborv    qpUuuWf MVynQ";
+    charset = "qtN7k82r";
+	result = ft_split(str, charset);
+    i = 0;
+    while (result[i] != NULL)
+    {
+        printf("|%s|\n", result[i]);
+        i++;
+    }
+    free(result);
+
+	printf("\n-----Test 3----\n");
+	str = "ht6Ds4hXr7SI2oY        G1cQLg4nOdyw iQztXqoNVBFGCHArA9bN";
+    charset = "jeoF";
+	result = ft_split(str, charset);
+    i = 0;
+    while (result[i] != NULL)
+    {
+        printf("|%s|\n", result[i]);
+        i++;
+    }
     free(result);
     return 0;
 }
+
  */

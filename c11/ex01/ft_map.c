@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbui <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 14:55:09 by dbui              #+#    #+#             */
-/*   Updated: 2023/02/04 14:55:11 by dbui             ###   ########.fr       */
+/*   Created: 2023/02/16 16:12:32 by dbui              #+#    #+#             */
+/*   Updated: 2023/02/16 16:12:33 by dbui             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#include <stdlib.h>
+
+int	*ft_map(int *tab, int length, int(*f)(int))
 {
 	int	i;
+	int	*array;
 
+	array = (int *)malloc(length * sizeof(int));
+	if (array == NULL)
+		return (0);
 	i = 0;
-	while (s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0'))
-		i++;
-	return (s1[i] - s2[i]);
+	while (i < length)
+	{
+		array[i] = (*f)(tab[i]);
+	}
+	return (array);
 }

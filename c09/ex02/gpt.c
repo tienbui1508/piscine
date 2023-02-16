@@ -92,8 +92,10 @@ char **ft_split(char *str, char *charset);
 
 int main(void)
 {
-    char *str = "This3is2a1 2string21to1be12split";
-    char *charset = "12 3";
+    // char *str = "This3is2a1 2string21to1be12split";
+    // char *charset = "12 3";
+    char *str = "cCu2ggnOiODP3Zlborv    qpUuuWf MVynQ";
+    char *charset = "qtN7k82r";
     char **result = ft_split(str, charset);
 
     int i = 0;

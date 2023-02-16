@@ -106,8 +106,8 @@ char **ft_split(char *str, char *charset);
 
 int main(void)
 {
-    char *str = "This is a string to be split";
-    char *charset = " s";
+    char *str = " gh  ";
+    char *charset = " ";
     char **result = ft_split(str, charset);
 
     int i = 0;
