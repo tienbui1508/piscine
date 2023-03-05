@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int	*ft_map(int *tab, int length, int(*f)(int))
+int	*ft_map(int *tab, int length, int (*f)(int))
 {
 	int	i;
 	int	*array;
@@ -24,6 +24,35 @@ int	*ft_map(int *tab, int length, int(*f)(int))
 	while (i < length)
 	{
 		array[i] = (*f)(tab[i]);
+		i++;
 	}
 	return (array);
 }
+
+/* //test ex01
+#include <stdio.h>
+#include <stdlib.h>
+
+int square(int x)
+{
+    return x * x;
+}
+
+int main(void)
+{
+    int arr[] = {1, 2, 3, 4, 5};
+    int *result = ft_map(arr, 5, &square);
+
+    if (result == NULL) {
+        printf("Failed to allocate memory\n");
+        return 1;
+    }
+
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", result[i]);
+    }
+    printf("\n");
+
+    free(result);
+    return 0;
+} */

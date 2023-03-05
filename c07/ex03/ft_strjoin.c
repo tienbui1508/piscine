@@ -64,11 +64,9 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*result;
 	int		i;
-	int		j;
 	int		len;
 
 	i = 0;
-	j = 0;
 	if (size == 0)
 	{
 		result = (char *)malloc(sizeof(char));
@@ -78,6 +76,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	result = (char *)(malloc((len + 1) * sizeof(char)));
 	if (!result)
 		return (0);
+	result[0] = '\0';
 	while (i < size)
 	{
 		concat_str(result, strs[i]);
@@ -93,7 +92,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 #include <stdio.h>
 int	main(void)
 {
-
 	char	*separator;
 	char	*result;
 	int	size = 3;
@@ -107,4 +105,5 @@ int	main(void)
 	printf("%s$\n", result);
 	free(result);
 	return 0;
-} */
+}
+ */
